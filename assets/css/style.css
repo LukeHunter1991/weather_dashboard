@@ -1,0 +1,36 @@
+:root {
+
+}
+
+* {
+    box-sizing: border-box;
+    /*font-size: 24px;*/
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    margin: auto;
+    text-align: center;
+    background-color: gold;
+    display: block;
+    min-width: 100vw;
+    min-height: 6vh;
+}
+
+h1 {
+    padding: 1vh 0px;
+}
+
+#dashboard-container {
+    float: right;
+    max-width: 80vw;
+}
+
+#search-container {
+    float: left;
+    max-width: 15vw;
+    text-align: center;
+}
+
+
