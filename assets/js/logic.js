@@ -3,11 +3,6 @@ const apiKey = "a7e623df466f51b11cf869355c04d5f0";
 const cityName = "Melbourne";
 const locationUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},&limit=1&appid=${apiKey}`;
 
-// Created variables to store dashboard elements
-const dashTempEl = document.getElementById("dash-top-temp");
-const dashWindEl = document.getElementById("dash-top-wind");
-const dashHumidity = document.getElementById("dash-top-humidity");
-
 
 function geoAPI() {
     fetch(
@@ -38,22 +33,49 @@ function weatherAPI(lat, lon) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data.list);
             if (data.length == 0) {
                 alert("No weather information available");
             } else {
                 console.log(data.list);
-                UpdateDashTop(data.list);
+                UpdateDashboard(data.list);
             }
         });
 }
 
+function UpdateDashboard(dashboardData) {
 
-function UpdateDashTop(dashboardData) {
+    // Store degree symbol in variable to use in text content
     const deg = '\u00B0';
-    dashTempEl.textContent = `Temp: ${dashboardData[0].main.temp}${deg}C`;
-    dashWindEl.textContent = `Wind: ${dashboardData[0].wind.speed} Km/H`;
-    dashHumidity.textContent = `Humidity: ${dashboardData[0].main.humidity}%`;
+
+    let count = 0;
+    // Update dashboard weather values for current day
+    for (let i = 0; i < 6; i++) {
+
+        console.log(`${count}`);
+        console.log(`${i}`);
+
+        if (count > 39) {
+            count = 39;
+        }
+
+        // Get next set of card ID elements each loop
+        let cardHeaderEl = document.getElementById(`card-header-${i}`);
+        let cardIconEl = document.getElementById(`icon-day-${i}`);
+        let cardTempEl = document.getElementById(`card-temp-${i}`);
+        let cardWindEl = document.getElementById(`card-wind-${i}`);
+        let cardHumidityEl = document.getElementById(`card-humidity-${i}`);
+        let today = dashboardData[count].dt_txt//.slice(0, 10);
+
+        // Update card elements with each loop
+        cardHeaderEl.textContent = today;
+        // Get weather icon provided by openweathermap.org
+        cardIconEl.setAttribute("src", `https://openweathermap.org/img/wn/${dashboardData[count].weather[0].icon}@2x.png`)
+        cardTempEl.textContent = `Temp: ${dashboardData[count].main.temp}${deg}C`;
+        cardWindEl.textContent = `Wind: ${dashboardData[count].wind.speed} Km/H`;
+        cardHumidityEl.textContent = `Humidity: ${dashboardData[count].main.humidity}%`;
+
+        count = count + 8;
+    }
 }
 
 geoAPI();

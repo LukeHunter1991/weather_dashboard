@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="./assets/css/style.css" rel="stylesheet">
     <title>Weather Dashboard</title>
 </head>
+
 <body>
     <header>
         <div>
@@ -16,61 +18,64 @@
     <main>
         <section id="dashboard-container">
             <section id="dash-top-container">
-                <h2 id="dash-header">Melbourne 27/03/2024 🌞</h2>
-                <h4 class="dash-top-el" id="dash-top-temp">Temp: </h4>
-                <h4 class="dash-top-el" id="dash-top-wind">Wind: </h4>
-                <h4 class="dash-top-el" id="dash-top-humidity">Humidity: </h4>
+                <h2 id="card-header-0"></h2>
+                <img class="icon" id="icon-day-0">
+                <h4 class="dash-top-el" id="card-temp-0"></h4>
+                <h4 class="dash-top-el" id="card-wind-0"></h4>
+                <h4 class="dash-top-el" id="card-humidity-0"></h4>
             </section>
             <section id="dash-card-container">
                 <h3 class="dash-card-header">5-Day Forecast:</h3>
                 <section class="card" id="card-1">
                     <h4 class="card-header" id="card-header-1"></h4>
-                    <h4 class="icon" id="icon-day-1"></h4>
-                    <h4 class="card-el" id="card-temp">Temp: </h4>
-                    <h4 class="card-el" id="card-wind">Wind: </h4>
-                    <h4 class="card-el" id="card-humidity">Humidity: </h4>
+                    <img class="icon" id="icon-day-1">
+                    <h4 class="card-el" id="card-temp-1"></h4>
+                    <h4 class="card-el" id="card-wind-1"></h4>
+                    <h4 class="card-el" id="card-humidity-1"></h4>
                 </section>
                 <section class="card" id="card-2">
                     <h4 class="card-header" id="card-header-2"></h4>
-                    <h4 class="icon" id="icon-day-2"></h4>
-                    <h4 class="card-el" id="card-temp">Temp: </h4>
-                    <h4 class="card-el" id="card-wind">Wind: </h4>
-                    <h4 class="card-el" id="card-humidity">Humidity: </h4>
+                    <img class="icon" id="icon-day-2">
+                    <h4 class="card-el" id="card-temp-2"></h4>
+                    <h4 class="card-el" id="card-wind-2"></h4>
+                    <h4 class="card-el" id="card-humidity-2"></h4>
                 </section>
                 <section class="card" id="card-3">
                     <h4 class="card-header" id="card-header-3"></h4>
-                    <h4 class="icon" id="icon-day-3"></h4>
-                    <h4 class="card-el" id="card-temp">Temp: </h4>
-                    <h4 class="card-el" id="card-wind">Wind: </h4>
-                    <h4 class="card-el" id="card-humidity">Humidity: </h4>
+                    <img class="icon" id="icon-day-3">
+                    <h4 class="card-el" id="card-temp-3"></h4>
+                    <h4 class="card-el" id="card-wind-3"></h4>
+                    <h4 class="card-el" id="card-humidity-3"></h4>
                 </section>
                 <section class="card" id="card-4">
                     <h4 class="card-header" id="card-header-4"></h4>
-                    <h4 class="icon" id="icon-day-4"></h4>
-                    <h4 class="card-el" id="card-temp">Temp: </h4>
-                    <h4 class="card-el" id="card-wind">Wind: </h4>
-                    <h4 class="card-el" id="card-humidity">Humidity: </h4>
+                    <img class="icon" id="icon-day-4">
+                    <h4 class="card-el" id="card-temp-4"></h4>
+                    <h4 class="card-el" id="card-wind-4"></h4>
+                    <h4 class="card-el" id="card-humidity-4"></h4>
                 </section>
                 <section class="card" id="card-5">
                     <h4 class="card-header" id="card-header-5"></h4>
-                    <h4 class="icon" id="icon-day-5"></h4>
-                    <h4 class="card-el" id="card-temp">Temp: </h4>
-                    <h4 class="card-el" id="card-wind">Wind: </h4>
-                    <h4 class="card-el" id="card-humidity">Humidity: </h4>
+                    <img class="icon" id="icon-day-5">
+                    <h4 class="card-el" id="card-temp-5"></h4>
+                    <h4 class="card-el" id="card-wind-5"></h4>
+                    <h4 class="card-el" id="card-humidity-5"></h4>
                 </section>
             </section>
         </section>
         <aside id="search-container">
             <section id="search-card">
-            <h2 id="search-header">Search:</h2>
-            <form id="search-form">
-                <input name="search-city" id="search-city" type="text" autofocus="true" class="form-input" placeholder="Melbourne">
-                <button type="submit" class="btn" id="search-btn">Submit</button>
-            </form>
+                <h2 id="search-header">Search:</h2>
+                <form id="search-form">
+                    <input name="search-city" id="search-city" type="text" autofocus="true" class="form-input"
+                        placeholder="Melbourne">
+                    <button type="submit" class="btn" id="search-btn">Submit</button>
+                </form>
             </section>
             <section id="history"></section>
         </aside>
     </main>
     <script src="./assets/js/logic.js"></script>
 </body>
+
 </html>
