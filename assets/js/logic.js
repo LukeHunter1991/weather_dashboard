@@ -1,12 +1,12 @@
 // Created variables to store API details
 const apiKey = "a7e623df466f51b11cf869355c04d5f0";
-const cityName = "Melbourne";
-const locationUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},&limit=1&appid=${apiKey}`;
-
+let cityName = "";
+//const locationUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},&limit=1&appid=${apiKey}`;
+const searchEl = document.getElementById("search-form");
 
 function geoAPI() {
     fetch(
-        locationUrl
+        `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},&limit=1&appid=${apiKey}`
     )
         .then(function (response) {
             return response.json();
@@ -64,7 +64,7 @@ function UpdateDashboard(dashboardData) {
         let cardTempEl = document.getElementById(`card-temp-${i}`);
         let cardWindEl = document.getElementById(`card-wind-${i}`);
         let cardHumidityEl = document.getElementById(`card-humidity-${i}`);
-        let today = dashboardData[count].dt_txt//.slice(0, 10);
+        let today = dashboardData[count].dt_txt + " UTC"
 
         // Update card elements with each loop
         cardHeaderEl.textContent = today;
@@ -78,4 +78,13 @@ function UpdateDashboard(dashboardData) {
     }
 }
 
-geoAPI();
+const handleSearch = function (e) {
+
+    e.preventDefault();
+    cityName = document.getElementById("search-city").value;
+    console.log(cityName);
+    geoAPI();
+
+}
+
+searchEl.addEventListener('submit', handleSearch)
