@@ -1,36 +1,149 @@
 :root {
-
+    --width-style: 15vw;
+    --card-color: rgb(255, 203, 140);
+    --history-city-color: lightgrey;
 }
 
 * {
     box-sizing: border-box;
-    /*font-size: 24px;*/
+    font-size: 24px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
+    transition: 0.25s ease-in-out;
+
 }
 
+/* Header styling including background gradient */
 header {
     margin: auto;
     text-align: center;
-    background-color: gold;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
     display: block;
     min-width: 100vw;
-    min-height: 6vh;
+    min-height: 12vh;
 }
 
 h1 {
+    font-size: 3rem;
     padding: 1vh 0px;
 }
 
+main {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* Align weather data to right */
 #dashboard-container {
     float: right;
-    max-width: 80vw;
+    max-width: max-content;
 }
 
+/* Styling for header/icon in top dashboard */
+#card-header-0,
+#icon-day-0 {
+    display: inline;
+    font-size: 2rem;
+    margin: -20px 0;
+}
+
+#dash-top-container {
+    border: solid 2px;
+    border-radius: 5px;
+    min-width: 80vw;
+    padding: 10px;
+    margin: 15px;
+}
+
+/* Create spacing between top dashboard title/icon and the weather information */
+#card-temp-0 {
+    margin-top: 25px;
+}
+
+#dash-card-section {
+    padding: 15px;
+}
+
+/* Ebenly space 5 day weather cards */
+#dash-card-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 1vw;
+}
+
+/* Styling for 5 day forecast cards */
+.card {
+    display: block;
+    background-color: var(--card-color);
+    text-align: center;
+    margin: 10px 5px;
+    min-width: var(--width-style);
+    min-height: 23vh;
+    border-radius: 5px;
+}
+
+.card-el {
+    margin: 10px 0;
+}
+
+/* Applies to weather icons */
+img {
+    max-width: 80px;
+}
+
+.card-header {
+    font-size: 1.2rem;
+}
+
+/* Aligns search section to left */
 #search-container {
     float: left;
-    max-width: 15vw;
+    max-width: 18vw;
     text-align: center;
+    border-right: solid;
 }
 
+.search-element {
+    margin: 1vh 1px;
+}
 
+form {
+    border-bottom: solid 1px;
+}
+
+#search-city {
+    max-width: var(--width-style);
+}
+
+/* Styling for the search button */
+#search-btn {
+    padding: 5px;
+    background-color: lightskyblue;
+    border: solid 1px;
+    border-radius: 5px;
+    margin: 5px 5px;
+    min-width: var(--width-style);
+}
+
+/* Styling for city history buttons */
+.cityHistory {
+    padding: 5px;
+    background-color: var(--history-city-color);
+    border: solid 1px;
+    border-radius: 5px;
+    margin: auto;
+    max-width: var(--width-style);
+    margin-top: 10px;
+    filter: opacity(0.6);
+}
+
+/* Cursor hover animation */
+.cityHistory:hover {
+    margin: 11px auto;
+    filter: opacity(1);
+    cursor: pointer;
+}
