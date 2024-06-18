@@ -10,7 +10,7 @@ const historyEl = document.getElementById('history');
 // Call function to get longitude and latitude details for weather API
 function geoAPI() {
     fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},&limit=1&appid=${apiKey}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${cityName},&limit=1&appid=${apiKey}`
     )
         .then(function (response) {
             return response.json();
@@ -29,7 +29,7 @@ function geoAPI() {
 function weatherAPI(lat, lon) {
 
     fetch(
-        `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
     )
         .then(function (response) {
             return response.json();
